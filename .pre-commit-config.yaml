@@ -1,0 +1,43 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+
+- repo: https://github.com/sqlfluff/sqlfluff
+  rev: 2.3.5
+  hooks:
+    - id: sqlfluff-lint
+      additional_dependencies: [
+        'dbt-snowflake==1.7.1',
+        'sqlfluff-templater-dbt==2.3.5'
+      ]
+    - id: sqlfluff-fix
+      stages: [manual]  # this command is available only to run manually
+      additional_dependencies: [
+        'dbt-snowflake==1.7.1',
+        'sqlfluff-templater-dbt==2.3.5'
+      ]
+
+- repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+  rev: v1.2.0
+  hooks:
+    - id: dbt-compile # Compiles dbt (necessary for future hooks)
+    - id: dbt-docs-generate # Generates the dbt docs (necessary for some future hooks)
+    - id: check-model-columns-have-desc
+      files: models/
+    - id: check-model-has-all-columns
+      files: models/
+    - id: check-model-has-description
+      files: models/
+    - id: check-model-has-tests
+      args: ["--test-cnt", "1", "--"] #the number shows the count of test
+      files: models/
+    - id: check-script-ref-and-source
+      files: models/
+    - id: check-script-semicolon
+      files: models/
+    - id: check-script-has-no-table-name
+      files: models/
