@@ -1,0 +1,8 @@
+version: 2
+
+macros:
+  - name: month_trunc
+    description: A macro to truncate the month of a date field and convert it to date format
+    arguments:
+      - name: column_name
+        type: date

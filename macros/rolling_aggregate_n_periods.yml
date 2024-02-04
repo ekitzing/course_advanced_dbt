@@ -1,0 +1,29 @@
+version: 2
+
+macros:
+  - name: rolling_aggregate_n_periods
+    description: A macro to create a rolling aggregation of a metric over a specified period of time
+    arguments:
+      - name: column_name
+        type: text
+        description: The name of the column to be aggregated.
+
+      - name: partition_by
+        type: text
+        description: The name of the column to be partitioned by.
+
+      - name: agg
+        type: text
+        description: The aggregate function, such as avg or sum. Default avg.
+
+      - name: num
+        type: int
+        description: The number of periods to be aggregated. Default 7.
+
+      - name: periods
+        type: text
+        description: The periods, can be days, months, etc. Default days.
+
+      - name: order_by
+        type: text
+        description: The column to be ordered by. Default created_at.
