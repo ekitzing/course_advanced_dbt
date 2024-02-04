@@ -23,3 +23,12 @@ models:
 
       - name: video_watched_count
         description: The number of times the user watched videos during the specified session.
+
+      - name: page_viewed_count
+        description: The number of times the user loaded & viewed a page during the specified session.
+
+      - name: button_clicked_count
+        description: The number of times the user clicked on a button within a page during the specified session.
+
+      - name: cta_clicked_count
+        description: The number of times the user clicked on a call to action button during the specified session.

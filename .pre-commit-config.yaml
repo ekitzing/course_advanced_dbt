@@ -41,3 +41,6 @@ repos:
       files: models/
     - id: check-script-has-no-table-name
       files: models/
+    - id: check-model-tags
+      args: ["--tags", "daily", "weekly", "monthly", "--"]
+      files: ^models/marts/core
