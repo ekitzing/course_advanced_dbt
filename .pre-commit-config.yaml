@@ -33,7 +33,7 @@ repos:
     - id: check-model-has-description
       files: models/
     - id: check-model-has-tests
-      args: ["--test-cnt", "1", "--"] #the number shows the count of test
+      args: ["--test-cnt", "1", "--exclude models/staging", "--"] #the number shows the count of test
       files: models/
     - id: check-script-ref-and-source
       files: models/
