@@ -17,6 +17,10 @@
 - Columns that should be unique must have a unique schema test.
 
 #### Models
+For staging layer models:
+- Do not repeat test for columns already tested in the source layer, if there are no joins done.
+
+For other models:
 - The primary key column must have not_null and unique schema tests.
 - All boolean columns must have an accepted_values schema test. The accepted values are true and false.
 - Columns that contain category values must have an accepted_values schema test.
