@@ -1,0 +1,32 @@
+models:
+  - name: int_subscription_periods
+    description: This intermediate model contains information about Bingeflix subscription periods.
+    columns:
+      - name: subscription_id
+        description: The unique identifier of the subscription.
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: The identifier of the user.
+
+      - name: starts_at
+        description: When the subscription started.
+
+      - name: ends_at
+        description: When the subscription ends.
+
+      - name: start_month
+        description: The month when the subscription started.
+
+      - name: end_month
+        description: The month when the subscription ends.
+
+      - name: plan_name
+        description: The name of the subscription plan.
+
+      - name: monthly_amount
+        description: The monthly cost of the subscription.
+        tests:
+          - not_null
